@@ -1,4 +1,5 @@
 import {StoryblokComponent, useStoryblokState, getStoryblokApi} from "@storyblok/react";
+import Home from "../components/content_types/home";
 
 import Logo from '../components/layout/logo'
 import Navigation from "../components/layout/navigation"
