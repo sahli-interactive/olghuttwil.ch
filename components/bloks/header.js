@@ -1,11 +1,27 @@
 import { StoryblokComponent } from "@storyblok/react"
+import Image from "next/image"
 
 function Header({ blok }) {
   return (
-    <header className="grid grid-cols-12 gap-4">
-      {blok.headline && <h1>{blok.headline}</h1>}
-      {blok.lead && <p>{blok.lead}</p>}
-      <img src={blok.picture.filename} />
+    <header className="grid grid-cols-12 gap-4 relative p-6 h-screen ">
+      {blok.picture.filename && (
+          <Image
+            src={blok.picture.filename}
+            alt={blok.picture.alt}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            blurDataURL={blok.picture.filename + '/m/50x0'}
+          />
+      )}
+      <div className="col-span-6 p-12 bg-yellow rounded-r-3xl z-10  flex flex-col h-fit gap-4 bottom-0 left-0">
+        {blok.headline && <h1 className="h1 text-4xl font-bold">{blok.headline}</h1>}
+        {blok.lead && <p className="text-lg">{blok.lead}</p>}
+        {blok.buttons && blok.buttons.map(blok => (
+          <StoryblokComponent key={blok._uid} blok={blok} />
+        ))}
+        {blok.button && <a href="{blok.button.link}" className="text-lg">{blok.button.label}</a>}
+      </div>
     </header>
   )
 }
