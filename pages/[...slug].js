@@ -1,11 +1,11 @@
 import {StoryblokComponent, useStoryblokState, getStoryblokApi} from "@storyblok/react";
-import Home from "../components/content_types/home";
+import { createContext } from "react";
 
-import Logo from '../components/layout/logo'
-import Navigation from "../components/layout/navigation"
 import SeoMetaTags from "../components/layout/seo-meta-tags"
 
-export default function Page({story, links, preview}) {
+export const EventsContext = createContext()
+
+export default function Page({story, events, preview}) {
     if (preview) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         story = useStoryblokState(story);
@@ -18,8 +18,9 @@ export default function Page({story, links, preview}) {
     return (
         <>
             <SeoMetaTags story={story} />
-
-            <StoryblokComponent blok={story.content} />
+            <EventsContext.Provider value={events}>
+                <StoryblokComponent blok={story.content} />
+            </EventsContext.Provider>
 
             <footer>
                 Your Footer
@@ -45,26 +46,16 @@ export async function getStaticProps({query, params, preview = false}) {
         sbParams.cv = Date.now()
     }
     let storyQuery = storyblokApi.get(`cdn/stories/${slug}`, sbParams)
-    let linksQuery = storyblokApi.get("cdn/links/")
-
-    const responses = await Promise.all([storyQuery, linksQuery])
-    let links = []
-
-    Object.keys(responses[1].data.links).forEach((linkKey) => {
-        // do not create a route for folders and home
-        if (responses[1].data.links[linkKey].is_folder || responses[1].data.links[linkKey].slug === "home") {
-            return;
-        }
-
-        links.push(responses[1].data.links[linkKey])
+    let eventsQuery = storyblokApi.get(`cdn/stories/termine`, {
+        ...sbParams,
     })
 
-    links.sort((a, b) => a.position - b.position)
+    const responses = await Promise.all([storyQuery, eventsQuery])
 
     return {
         props: {
             story: responses[0].data ? responses[0].data.story : null,
-            links,
+            events: responses[1].data ? responses[1].data.story : null,
             key: slug,
             preview,
         },

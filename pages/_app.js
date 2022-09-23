@@ -7,6 +7,10 @@ import button from "../components/bloks/button"
 import team_grid from "../components/bloks/team_grid"
 import team_card from "../components/bloks/team_card"
 import kontakt from "../components/content_types/kontakt"
+import termine from "../components/content_types/termine"
+import event_card from "../components/bloks/event_card"
+import event_grid from "../components/bloks/event_grid"
+import event_teaser from "../components/bloks/event_teaser"
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -17,9 +21,13 @@ storyblokInit({
     header,
     verein,
     kontakt,
+    termine,
+    event_card,
+    event_grid,
     button,
     team_card,
     team_grid,
+    event_teaser,
   },
 });
 

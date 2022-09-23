@@ -10,8 +10,14 @@ module.exports = {
         blue: {
           700: '#104175',
           500: '#1659A1',
-        }
-      }
+        },
+      },
+      borderWidth: {
+        '3': '3px',
+      },
+      borderRadius: {
+        '50': '50px',
+      },
     },
   },
   variants: {

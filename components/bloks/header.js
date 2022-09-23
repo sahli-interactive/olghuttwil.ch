@@ -3,8 +3,8 @@ import Image from "next/image"
 
 function Header({ blok }) {
   return (
-    <header className="grid grid-cols-12 gap-4 relative p-6 h-screen ">
-      {blok.picture.filename && (
+    <header className={`grid grid-cols-12 gap-4 relative p-6 bg-yellow${blok.picture?.filename ? ' h-screen' : ''}`}>
+      {blok.picture?.filename && (
           <Image
             src={blok.picture.filename}
             alt={blok.picture.alt}
@@ -20,7 +20,6 @@ function Header({ blok }) {
         {blok.buttons && blok.buttons.map(blok => (
           <StoryblokComponent key={blok._uid} blok={blok} />
         ))}
-        {blok.button && <a href="{blok.button.link}" className="text-lg">{blok.button.label}</a>}
       </div>
     </header>
   )
