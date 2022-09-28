@@ -10,7 +10,7 @@ function EventCard({ blok }) {
                     {blok.location && <h4 className="h4 text-base font-light">{blok.location}</h4>}
                     {date && <h4 className="h4 text-base font-light">{date}</h4>}
                 </div>
-                {blok.name && <h3 className="text-2xl text-blue-700 font-bold">{blok.name}</h3>}
+                {blok.name && <h3 className="text-2xl text-blue-700 hover:text-blue-500 font-bold">{blok.name}</h3>}
             </div>
         </a>
     )

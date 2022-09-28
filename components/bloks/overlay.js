@@ -23,10 +23,10 @@ function Overlay({ blok }) {
         >
             <Dialog.Backdrop className="fixed inset-0 bg-black/20 z-10" />
             <div className="fixed inset-0 flex items-center justify-center p-4">
-                <Dialog.Panel className="p-8 w-full max-w-sm rounded-50 bg-white">
-                    <button onClick={() => setIsOpen(false)} className="">
+                <Dialog.Panel className="p-8 w-fit max-w-sm rounded-50 bg-white relative">
+                    <button onClick={() => setIsOpen(false)} className="absolute right-8">
                         <span className="sr-only">Schliessen</span>
-                        <FontAwesomeIcon icon={faXmark} />
+                        <FontAwesomeIcon icon={faXmark} className="h-6"/>
                     </button>
                     <Dialog.Title className="h3">{blok.name}</Dialog.Title>
                     <Dialog.Description className="p mt-4">

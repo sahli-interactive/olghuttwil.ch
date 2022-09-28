@@ -1,11 +1,13 @@
 import {StoryblokComponent, useStoryblokState, getStoryblokApi} from "@storyblok/react";
 import { createContext } from "react";
+import Navigation from "../components/layout/navigation"
+import Footer from "../components/layout/footer"
 
 import SeoMetaTags from "../components/layout/seo-meta-tags"
 
 export const EventsContext = createContext()
 
-export default function Page({story, events, preview}) {
+export default function Page({story, global, events, preview}) {
     if (preview) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         story = useStoryblokState(story);
@@ -18,12 +20,13 @@ export default function Page({story, events, preview}) {
     return (
         <>
             <SeoMetaTags story={story} />
+            <Navigation global={global} currentstory={story}/>
             <EventsContext.Provider value={events}>
                 <StoryblokComponent blok={story.content} />
             </EventsContext.Provider>
 
             <footer>
-                Your Footer
+            <Footer blok={global.content} currentstory={story}/>
             </footer>
         </>
     )
@@ -46,16 +49,18 @@ export async function getStaticProps({query, params, preview = false}) {
         sbParams.cv = Date.now()
     }
     let storyQuery = storyblokApi.get(`cdn/stories/${slug}`, sbParams)
+    let globalQuery = storyblokApi.get(`cdn/stories/global`, sbParams)
     let eventsQuery = storyblokApi.get(`cdn/stories/termine`, {
         ...sbParams,
     })
 
-    const responses = await Promise.all([storyQuery, eventsQuery])
+    const responses = await Promise.all([storyQuery, globalQuery, eventsQuery])
 
     return {
         props: {
             story: responses[0].data ? responses[0].data.story : null,
-            events: responses[1].data ? responses[1].data.story : null,
+            global: responses[1].data ? responses[1].data.story : null,
+            events: responses[2].data ? responses[2].data.story : null,
             key: slug,
             preview,
         },

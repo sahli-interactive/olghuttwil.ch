@@ -11,16 +11,16 @@ function EventGrid({ blok }) {
     }
     return (
         <>
-            <div className="grid grid-cols-12 gap-4 mt-6 flex-wrap">
-                <div className="col-span-10 col-start-2">
+            <div className="grid grid-cols-12 gap-4 mt-6 flex-wrap container">
+                <div className="col-span-12 col-start-2">
                     {blok.headline && <h2 className="h2 text-3xl font-bold">{blok.headline}</h2>}
-                    <div className="flex">
-                        <button onClick={() => setActiveTag(null)} className={`px-6 py-4 whitespace-nowrap rounded-full inline-flex  text-blue-700${activeTag === null ? ' bg-yellow' : ' border-blue-700 border-3'}`}>Alle</button>
+                    <div className="flex gap-4 mt-8 mb-4">
+                        <button onClick={() => setActiveTag(null)} className={`px-6  py-4 whitespace-nowrap rounded-full flex inline-flex hover:bg-yellow text-blue-700 h-14 font-semibold ${activeTag === null ? ' bg-yellow drop-shadow-lg' : ' border-blue-700 border-3'}`}>Alle</button>
                         {blok.event && blok.event.map(blok => (
                             <button
                                 key={blok._uid}
                                 onClick={() => setActiveTag(blok.tag)}
-                                className={`px-6 py-4 whitespace-nowrap rounded-full inline-flex  text-blue-700${blok.tag === activeTag ? ' bg-yellow' : ' border-blue-700 border-3'}`}
+                                className={`px-6 py-4 whitespace-nowrap rounded-full flex inline-flex hover:bg-yellow text-blue-700 h-14 font-semibold ${blok.tag === activeTag ? ' bg-yellow drop-shadow-lg' : ' border-blue-700 border-3'}`}
                             >
                                 {tagStrings[blok.tag]}
                             </button>

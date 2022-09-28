@@ -11,6 +11,8 @@ import termine from "../components/content_types/termine"
 import event_card from "../components/bloks/event_card"
 import event_grid from "../components/bloks/event_grid"
 import event_teaser from "../components/bloks/event_teaser"
+import partnerlogo from "../components/bloks/partnerlogo"
+import partnerlogos from "../components/bloks/partnerlogos"
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -22,6 +24,8 @@ storyblokInit({
     verein,
     kontakt,
     termine,
+    partnerlogo,
+    partnerlogos,
     event_card,
     event_grid,
     button,
