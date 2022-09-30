@@ -20,7 +20,7 @@ export default function Page({story, global, events, preview}) {
     return (
         <>
             <SeoMetaTags story={story} />
-            <Navigation global={global} currentstory={story}/>
+            <Navigation global={global} currentStory={story}/>
             <EventsContext.Provider value={events}>
                 <StoryblokComponent blok={story.content} />
             </EventsContext.Provider>
