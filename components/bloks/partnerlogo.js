@@ -3,7 +3,6 @@ import Link from "next/link"
 
 function Partnerlogo({ blok }) {
     return (
-        <>
         <Image
             src={blok.picture.filename}
             alt={blok.picture.alt}
@@ -11,9 +10,9 @@ function Partnerlogo({ blok }) {
             objectFit="contain"
             placeholder="blur"
             blurDataURL={blok.picture.filename + '/m/50x0'}
-            className=" top-0 left-0 w-full h-3/5"
+            className=" top-0 left-0 h-3/5"
         />
-        </>
+
     )
 }
 

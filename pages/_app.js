@@ -12,7 +12,7 @@ import event_card from "../components/bloks/event_card"
 import event_grid from "../components/bloks/event_grid"
 import event_teaser from "../components/bloks/event_teaser"
 import partnerlogo from "../components/bloks/partnerlogo"
-import partnerlogos from "../components/bloks/partnerlogos"
+import partnerlogo_grid from "../components/bloks/partnerlogo_grid"
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -25,7 +25,7 @@ storyblokInit({
     kontakt,
     termine,
     partnerlogo,
-    partnerlogos,
+    partnerlogo_grid,
     event_card,
     event_grid,
     button,

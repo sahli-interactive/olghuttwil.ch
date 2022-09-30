@@ -9,11 +9,9 @@ const Navigation = ({ global, currentStory }) => (
         <div className="flex justify-between items-center gap-6">
             {global.content.nav_links?.map((nav_link, index) => (
                 <Link key={index} href={nav_link.story ? nav_link.link.story.full_slug : '#'}>
-                    <div className="hover:border-blue500">
-                    <a className="p font-semibold hover:text-blue-500">
+                    <a className="p font-semibold active:border-l-4 active:border-blue-500 hover:text-blue-500 px-4">
                         {nav_link.link.story?.name}
                     </a>
-                    </div>
                 </Link>
             ))}
             {global.content.nav_button.map(blok => (
