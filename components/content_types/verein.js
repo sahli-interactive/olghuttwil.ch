@@ -7,7 +7,7 @@ function Verein({ blok }) {
         <StoryblokComponent key={blok._uid} blok={blok} />
       ))}
       <main>
-        {blok.verein_intro && blok.verein_intro.map(blok => (
+        {blok.body && blok.body.map(blok => (
           <StoryblokComponent key={blok._uid} blok={blok} />
         ))}
       </main>
