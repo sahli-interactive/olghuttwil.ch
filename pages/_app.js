@@ -19,6 +19,7 @@ import text_block from "../components/bloks/text_block"
 import trainings from "../components/bloks/trainings"
 import table from "../components/bloks/table"
 import news_card from "../components/bloks/news_card"
+import news_overlay from "../components/bloks/news_overlay"
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -33,6 +34,7 @@ storyblokInit({
     termine,
     news,
     news_card,
+    news_overlay,
     text_block,
     partnerlogo,
     partnerlogo_grid,

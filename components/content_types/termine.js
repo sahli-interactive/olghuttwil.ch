@@ -4,7 +4,7 @@ import Overlay from "../bloks/overlay"
 
 function Termine({ blok }) {
     const router = useRouter()
-    const eventCard = blok.events.map(blok => blok.event.find(blok => blok._uid === router.query.eventId))
+    const eventCard = blok.news_cards.map(blok => blok.news_cards.find(blok => blok._uid === router.query.eventId))
     return (
         <>
             {blok.header && blok.header.map(blok => (

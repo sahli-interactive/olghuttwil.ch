@@ -1,9 +1,11 @@
-import { StoryblokComponent } from "@storyblok/react"
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faXmark } from "@fortawesome/pro-regular-svg-icons"
+import { StoryblokComponent } from "@storyblok/react"
 
 
-function Overlay({ blok }) {
+function NewsOverlay({ blok }) {
     let [isOpen, setIsOpen] = useState(true)
 
     return (
@@ -19,28 +21,14 @@ function Overlay({ blok }) {
                         <span className="sr-only">Schliessen</span>
                         <FontAwesomeIcon icon={faXmark} className="h-6" />
                     </button>
-                    <Dialog.Title className="h3">{blok.name}</Dialog.Title>
-                    <Dialog.Description className="p mt-4">
-                        <ul className="flex flex-col gap-3 mb-8">
-                            <li><FontAwesomeIcon icon={faCalendarDay} className="h-18 col-start-2 mr-3" />
-                                {date}</li>
-                            <li><FontAwesomeIcon icon={faClock} className="h-18 col-start-2 mr-3" />
-                                {time} <span>–</span> {blok.meeting_point}</li>
-                            <li><FontAwesomeIcon icon={faLocation} className="h-18 col-start-2 mr-3" />
-                                {blok.location}</li>
-                            <li><FontAwesomeIcon icon={faUser} className="h-18 col-start-2 mr-3" />
-                                {blok.contact}</li>
-                            <li><FontAwesomeIcon icon={faBus} className="h-18 col-start-2 mr-3" />
-                                {blok.transport}</li>
-                        </ul>
-
-                        {blok.button && blok.button.map(blok => (
-                            <StoryblokComponent key={blok._uid} blok={blok} />
+                    <Dialog.Title className="h3">{blok.headline}</Dialog.Title>
+                    <Dialog.Description className="p mt-4 mb-8">{blok.overlay_text}</Dialog.Description>
+                    {blok.button && blok.button.map(blok => (
+                        <StoryblokComponent key={blok._uid} blok={blok} />
                         ))}
-                    </Dialog.Description>
                 </Dialog.Panel>
             </div>
         </Dialog>
     )
 }
-export default Overlay
+export default NewsOverlay
