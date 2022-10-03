@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark } from "@fortawesome/pro-regular-svg-icons"
 import { StoryblokComponent } from "@storyblok/react"
 
 
-function NewsOverlay({ blok }) {
-    let [isOpen, setIsOpen] = useState(true)
-
+function NewsOverlay({ blok, isOpen, setIsOpen }) {
     return (
         <Dialog
             open={isOpen}

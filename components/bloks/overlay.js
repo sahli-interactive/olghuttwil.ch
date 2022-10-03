@@ -1,5 +1,4 @@
 import { StoryblokComponent } from "@storyblok/react"
-import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import dayjs from 'dayjs'
 import 'dayjs/locale/de'
@@ -10,11 +9,9 @@ import { faLocation } from "@fortawesome/pro-regular-svg-icons"
 import { faUser } from "@fortawesome/pro-regular-svg-icons"
 import { faBus } from "@fortawesome/pro-regular-svg-icons"
 
-function Overlay({ blok }) {
-    let [isOpen, setIsOpen] = useState(true)
+function Overlay({ blok, isOpen, setIsOpen }) {
     const date = dayjs(blok.date).locale('de-ch').format('dd, DD.MM.YYYY')
     let time = dayjs(blok.date).locale('de-ch').format('HH.mm') + ' Uhr'
-
     return (
         <Dialog
             open={isOpen}

@@ -1,10 +1,6 @@
 import { StoryblokComponent } from "@storyblok/react"
-import { useRouter } from "next/router"
-import Overlay from "../bloks/overlay"
 
 function Termine({ blok }) {
-    const router = useRouter()
-    const eventCard = blok.news_cards.map(blok => blok.news_cards.find(blok => blok._uid === router.query.eventId))
     return (
         <>
             {blok.header && blok.header.map(blok => (
@@ -13,7 +9,6 @@ function Termine({ blok }) {
             {blok.events && blok.events.map(blok => (
                 <StoryblokComponent key={blok._uid} blok={blok} />
             ))}
-            {eventCard[0] && <Overlay blok={eventCard[0]} />}
         </>
     )
 }
