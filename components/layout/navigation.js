@@ -17,7 +17,7 @@ function NavLink({ blok, currentStory }) {
 
 function Navigation({ global, currentStory }) {
     return (
-        <nav className="top-0 right-0 left-0 flex justify-between items-center gap-6 bg-white border-blue-700 h-24 px-12 mx-6 border-x-4 absolute z-20">
+        <nav className="top-0 right-0 left-0 flex justify-between items-center gap-6 bg-white border-blue-700 hover:border-blue-500 h-24 px-12 mx-6 border-x-4 absolute z-20">
             <a href="../home"><Logo /></a>
             <div className="flex justify-between items-center gap-6">
                 {global.content.nav_links?.map(blok => (
