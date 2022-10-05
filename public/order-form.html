@@ -1,0 +1,85 @@
+<form name="map-order" data-netlify="true"><input type="hidden" name="form-name" value="map-order">
+  <ol>
+    <li class="grid grid-cols-6 gap-x-5 gap-y-4 mb-6">
+      <h2 class="h3 col-span-full">1. Kartenbestellung</h2>
+      <div class="form-control col-span-full"><label for="map">Karte</label><select name="map" tabindex="0">
+          <option value="Ahorn" selected="">Ahorn</option>
+          <option value="Äschwald">Äschwald</option>
+          <option value="Bärhegen">Bärhegen</option>
+          <option value="Bergwald">Bergwald</option>
+          <option value="Blattenberg">Blattenberg</option>
+          <option value="Chaltenegg-Huttwilwald">Chaltenegg-Huttwilwald</option>
+          <option value="Chammeren">Chammeren</option>
+          <option value="Chleinegg">Chleinegg</option>
+          <option value="Fluhwald">Fluhwald</option>
+          <option value="Fluhwald-Ahorn	">Fluhwald-Ahorn </option>
+          <option value="Hegen-Schluckwald">Hegen-Schluckwald</option>
+          <option value="Hunze">Hunze</option>
+          <option value="Huttwilwald">Huttwilwald</option>
+          <option value="Melchnau">Melchnau</option>
+          <option value="Oberwald-Guggli	">Oberwald-Guggli </option>
+          <option value="Rotwald">Rotwald</option>
+          <option value="Schmidwald">Schmidwald</option>
+          <option value="Schmidwald-Horben">Schmidwald-Horben</option>
+          <option value="Schweikwald">Schweikwald</option>
+          <option value="Städtli Huttwil	">Städtli Huttwil </option>
+          <option value="Sumiswald">Sumiswald</option>
+          <option value="Campus Perspektiven	">Campus Perspektiven </option>
+          <option value="Chipfhalle Dürrenroth	">Chipfhalle Dürrenroth </option>
+          <option value="Dorfschulhäuser Sumiswald	c">Dorfschulhäuser Sumiswald c</option>
+          <option value="Dorfzentrum Affoltern i.E.">Dorfzentrum Affoltern i.E.</option>
+          <option value="Dorfzentrum Walterswil	">Dorfzentrum Walterswil </option>
+          <option value="Dorfzentrum Wasen	">Dorfzentrum Wasen </option>
+          <option value="Eriswil Dorf	">Eriswil Dorf </option>
+          <option value="Schulanlage Gondiswil	">Schulanlage Gondiswil </option>
+          <option value="Schulanlage Städtli Huttwil	">Schulanlage Städtli Huttwil </option>
+          <option value="Schulhaus Auswil	">Schulhaus Auswil </option>
+          <option value="Schulhaus Nyffel Huttwil	">Schulhaus Nyffel Huttwil </option>
+          <option value="Schulhaus Oeschenbach	">Schulhaus Oeschenbach </option>
+          <option value="Schulhaus Rohrbach	">Schulhaus Rohrbach </option>
+          <option value="Schulhaus Schonegg	">Schulhaus Schonegg </option>
+          <option value="Schulhaus Schwarzenbach	">Schulhaus Schwarzenbach </option>
+          <option value="Schulhaus Ursenbach	">Schulhaus Ursenbach </option>
+          <option value="Wyssachen">Wyssachen</option>
+        </select><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="angle-down"
+          class="svg-inline--fa fa-angle-down -ml-10" role="img" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512">
+          <path fill="currentColor"
+            d="M360.5 217.5l-152 143.1C203.9 365.8 197.9 368 192 368s-11.88-2.188-16.5-6.562L23.5 217.5C13.87 208.3 13.47 193.1 22.56 183.5C31.69 173.8 46.94 173.5 56.5 182.6L192 310.9l135.5-128.4c9.562-9.094 24.75-8.75 33.94 .9375C370.5 193.1 370.1 208.3 360.5 217.5z">
+          </path>
+        </svg></div>
+      <div class="form-control col-span-2"><label for="amount" class="">Anzahl</label><input id="amount" placeholder="1"
+          type="number" name="amount" value="1"></div>
+      <fieldset class="form-control radio-group col-span-3 col-start-4">
+        <legend>Format</legend><label><input type="radio" name="format" value="print" checked=""><span>Ausdruck
+            (Postversand)</span></label><label><input type="radio" name="format" value="ocadFile"><span>OCAD-Datei
+            (Download)</span></label>
+      </fieldset>
+      <div class="form-control col-span-full"><label for="occasion"
+          class="after:content-[&quot;_(optional)&quot;]">Anlass</label><input id="occasion" placeholder="sCOOL-OL"
+          type="text" name="occasion" value=""></div>
+      <div class="form-control col-span-full"><label for="occasionDate"
+          class="after:content-[&quot;_(optional)&quot;]">Datum Anlass</label><input id="occasionDate" placeholder="5"
+          type="date" name="occasionDate" value=""></div>
+    </li>
+    <li class="grid grid-cols-6 gap-x-5 gap-y-4 mb-6">
+      <h2 class="h3 col-span-full">2. Rechnungsadresse</h2>
+      <div class="form-control col-span-3"><label for="firstName" class="">Vorname</label><input id="firstName"
+          placeholder="Vanessa" type="text" name="firstName" value=""></div>
+      <div class="form-control col-span-3"><label for="lastName" class="">Nachname</label><input id="lastName"
+          placeholder="Muster" type="text" name="lastName" value=""></div>
+      <div class="form-control col-span-full"><label for="phoneNumber" class="">Telefonnummer</label><input
+          id="phoneNumber" placeholder="+41 00 000 00 00" type="tel" name="phoneNumber" value=""></div>
+      <div class="form-control col-span-full"><label for="email" class="">E-Mail</label><input id="email"
+          placeholder="vanessa@muster.ch" type="email" name="email" value=""></div>
+      <div class="form-control col-span-full"><label for="street" class="">Strasse und Hausnummer</label><input
+          id="street" placeholder="Musterstrasse 5" type="text" name="street" value=""></div>
+      <div class="form-control col-span-2"><label for="zipCode" class="">PLZ</label><input id="zipCode"
+          placeholder="3000" type="text" name="zipCode" value=""></div>
+      <div class="form-control col-span-4"><label for="city" class="">Ort</label><input id="city" placeholder="Bern"
+          type="text" name="city" value=""></div>
+    </li>
+  </ol>
+  <div class="col-span-full flex justify-end gap-3"><button class="btn btn-secondary">Abbrechen</button><button
+      type="submit" class="btn btn-primary">Karte bestellen</button></div>
+</form>
