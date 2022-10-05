@@ -7,8 +7,9 @@ import SeoMetaTags from "../components/layout/seo-meta-tags"
 
 export const EventsContext = createContext()
 export const ContactContext = createContext()
+export const NewsContext = createContext()
 
-export default function Page({story, global, contact, events, preview}) {
+export default function Page({story, global, contact, events, preview, news}) {
     if (preview) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         story = useStoryblokState(story);
@@ -24,7 +25,9 @@ export default function Page({story, global, contact, events, preview}) {
             <Navigation global={global} currentStory={story}/>
             <ContactContext.Provider value={contact}>
                 <EventsContext.Provider value={events}>
+                <NewsContext.Provider value={news}>
                     <StoryblokComponent blok={story.content} />
+                    </NewsContext.Provider>
                 </EventsContext.Provider>
             </ContactContext.Provider>
             <footer>
@@ -53,11 +56,12 @@ export async function getStaticProps({query, params, preview = false}) {
     let storyQuery = storyblokApi.get(`cdn/stories/${slug}`, sbParams)
     let globalQuery = storyblokApi.get(`cdn/stories/global`, sbParams)
     let contactQuery = storyblokApi.get(`cdn/stories/kontakt`, sbParams)
+    let newsQuery = storyblokApi.get(`cdn/stories/news`, sbParams)
     let eventsQuery = storyblokApi.get(`cdn/stories/termine`, {
         ...sbParams,
     })
 
-    const responses = await Promise.all([storyQuery, globalQuery, contactQuery, eventsQuery])
+    const responses = await Promise.all([storyQuery, globalQuery, contactQuery, eventsQuery, newsQuery])
 
     return {
         props: {
@@ -65,6 +69,7 @@ export async function getStaticProps({query, params, preview = false}) {
             global: responses[1].data ? responses[1].data.story : null,
             contact: responses[2].data ? responses[2].data.story : null,
             events: responses[3].data ? responses[3].data.story : null,
+            news: responses[4].data ? responses[4].data.story : null,
             key: slug,
             preview,
         },

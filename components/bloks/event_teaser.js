@@ -11,7 +11,7 @@ function EventTeaser({ blok }) {
     const eventCard = events.content.events.map(blok => blok.event.find(blok => blok._uid === router.query.eventId))
     return (
         <>
-        <section className="grid grid-cols-12 gap-4">
+        <section className=" grid grid-cols-12 gap-4">
             <div className="col-span-6 col-start-2 mt-16 flex flex-col gap-4 w-11/12">
                 {blok.headline_1 && <h2>{blok.headline_1}</h2>}
                 {events.content.events[0].event.filter(blok => blok.tag === 'matchsExternal' || blok.tag === 'matchsInternal').slice(0, 2).map(blok => (

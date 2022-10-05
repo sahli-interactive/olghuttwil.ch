@@ -9,6 +9,7 @@ import team_card from "../components/bloks/team_card"
 import kontakt from "../components/content_types/kontakt"
 import termine from "../components/content_types/termine"
 import news from "../components/content_types/news"
+import karten from "../components/content_types/karten"
 import event_card from "../components/bloks/event_card"
 import event_grid from "../components/bloks/event_grid"
 import event_teaser from "../components/bloks/event_teaser"
@@ -20,6 +21,9 @@ import trainings from "../components/bloks/trainings"
 import table from "../components/bloks/table"
 import news_card from "../components/bloks/news_card"
 import news_overlay from "../components/bloks/news_overlay"
+import news_teaser from "../components/bloks/news_teaser"
+import product_grid from "../components/bloks/product_grid"
+import product from "../components/bloks/product"
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -31,10 +35,14 @@ storyblokInit({
     verein,
     verein_intro,
     kontakt,
+    karten,
+    product_grid,
+    product,
     termine,
     news,
     news_card,
     news_overlay,
+    news_teaser,
     text_block,
     partnerlogo,
     partnerlogo_grid,
