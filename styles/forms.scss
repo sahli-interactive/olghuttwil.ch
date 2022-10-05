@@ -1,0 +1,34 @@
+@layer components {
+  .form-control {
+    &:not(.radio-group) label {
+      @apply block mb-2 text-sm font-bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="email"],
+    select {
+      @apply w-full px-6 py-4 rounded-full bg-white;
+    }
+
+    input[type="radio"] {
+      @apply w-5 h-5 accent-blue-500;
+    }
+
+    select {
+      @apply appearance-none;
+    }
+
+    &.radio-group {
+      legend {
+        @apply block mb-2 text-sm font-bold;
+      }
+
+      label {
+        @apply flex items-center gap-3 mb-1;
+      }
+    }
+  }
+}

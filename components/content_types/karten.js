@@ -2,13 +2,12 @@ import { StoryblokComponent } from "@storyblok/react"
 
 function Karten({ blok }) {
   return (
-    <>
+    <main>
         {blok.body && blok.body.map(blok => (
           <StoryblokComponent key={blok._uid} blok={blok} />
         ))}
-    </>
+    </main>
   )
-  console.log("1")
 }
 
 export default Karten
