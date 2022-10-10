@@ -21,11 +21,13 @@ function Overlay({ blok, isOpen, setIsOpen }) {
             <Dialog.Backdrop className="fixed inset-0 bg-black/20 z-10" />
             <div className="fixed inset-0 flex items-center justify-center p-4">
                 <Dialog.Panel className="p-8 w-fit max-w-sm rounded-50 bg-white relative">
-                    <button onClick={() => setIsOpen(false)} className="absolute right-8">
+                    <div className="flex justify-between gap-4">
+                    <Dialog.Title className="h3">{blok.name}</Dialog.Title>
+                    <button onClick={() => setIsOpen(false)}>
                         <span className="sr-only">Schliessen</span>
                         <FontAwesomeIcon icon={faXmark} className="h-6"/>
                     </button>
-                    <Dialog.Title className="h3">{blok.name}</Dialog.Title>
+                    </div>
                     <Dialog.Description className="p mt-4">
                         <ul className="flex flex-col gap-3 mb-8">
                         <li className="flex items-center"><FontAwesomeIcon icon={faCalendarDay} className="h-18 col-start-2 mr-3" />
@@ -39,10 +41,12 @@ function Overlay({ blok, isOpen, setIsOpen }) {
                         <li className="flex items-center"><FontAwesomeIcon icon={faBus} className="h-18 col-start-2 mr-3" />
                         {blok.transport}</li>
                         </ul>
-
-                        {blok.button && blok.button.map(blok => (
+                      
+                            {blok.button && blok.button.map(blok => (
                     <StoryblokComponent key={blok._uid} blok={blok} />
                 ))}
+                   
+                    
                     </Dialog.Description>
                 </Dialog.Panel>
             </div>

@@ -40,9 +40,11 @@ function NewsOverlay({ blok, isOpen, setIsOpen }) {
                         </button>
                         </div>
                         <Dialog.Description className="p mt-4 mb-8">{blok.overlay_text}</Dialog.Description>
+                        <div className='flex gap-4 flex-col'>
                         {blok.button && blok.button.map(blok => (
                             <StoryblokComponent key={blok._uid} blok={blok} />
                         ))}
+                        </div>
                     </div>
                     
                 </Dialog.Panel>

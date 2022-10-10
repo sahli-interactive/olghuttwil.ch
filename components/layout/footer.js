@@ -26,12 +26,12 @@ const Footer = ({ blok }) => {
                 </div>
                 <p>{blok.text}</p>
             </div>
-            <div className="grid grid-cols-2">
-            {/* <pre>{JSON.stringify(blok.partnerlogo_grid, null, 2)}</pre> */}
+            <div className="flex gap-16">
+                {/* <pre>{JSON.stringify(blok.partnerlogo_grid, null, 2)}</pre> */}
                 {blok.partnerlogo_grid && blok.partnerlogo_grid.map(blok => (
                     <StoryblokComponent key={blok._uid} blok={blok} />
                 ))}
-                </div>
+            </div>
         </nav>
     )
 }

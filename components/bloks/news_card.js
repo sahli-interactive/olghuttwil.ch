@@ -6,7 +6,7 @@ import 'dayjs/locale/de'
 
 function NewsCard({ blok }) {
     let [isOpen, setIsOpen] = useState(false)
-    const date = dayjs(blok.date).locale('de-ch').format('dd, DD.MM.YYYY')
+    const date = dayjs(blok.date).locale('de-ch').format('DD.MM.YYYY')
 
     function handleClick(event) {
         event.preventDefault()

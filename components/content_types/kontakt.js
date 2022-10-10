@@ -1,13 +1,10 @@
 import { StoryblokComponent } from "@storyblok/react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMailbox } from "@fortawesome/pro-regular-svg-icons"
 
 function Kontakt({ blok }) {
   return (
     <>
       <header className="container pt-48 grid grid-cols-12 gap-4 items-center">
-        <FontAwesomeIcon icon={faMailbox} className="h-12 col-start-2" />
-        {blok.headline && <h1 className="col-start-3">{blok.headline}</h1>}
+        {blok.headline && <h1 className="col-start-2">{blok.headline}</h1>}
       </header>
       <main className="container">
         {blok.team && blok.team.map(blok => (
