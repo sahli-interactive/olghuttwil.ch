@@ -28,15 +28,15 @@ function Overlay({ blok, isOpen, setIsOpen }) {
                     <Dialog.Title className="h3">{blok.name}</Dialog.Title>
                     <Dialog.Description className="p mt-4">
                         <ul className="flex flex-col gap-3 mb-8">
-                        <li className="flex"><FontAwesomeIcon icon={faCalendarDay} className="h-18 col-start-2 mr-3" />
+                        <li className="flex items-center"><FontAwesomeIcon icon={faCalendarDay} className="h-18 col-start-2 mr-3" />
                         {date}</li>
-                        <li className="flex"><FontAwesomeIcon icon={faClock} className="h-18 col-start-2 mr-3" />
+                        <li className="flex items-center"><FontAwesomeIcon icon={faClock} className="h-18 col-start-2 mr-3" />
                         {time} <span>–</span> {blok.meeting_point}</li>
-                        <li className="flex"><FontAwesomeIcon icon={faLocation} className="h-18 col-start-2 mr-3" />
+                        <li className="flex items-center"><FontAwesomeIcon icon={faLocation} className="h-18 col-start-2 mr-3" />
                         {blok.location}</li>
-                        <li className="flex"><FontAwesomeIcon icon={faUser} className="h-18 col-start-2 mr-3" />
+                        <li className="flex items-center"><FontAwesomeIcon icon={faUser} className="h-18 col-start-2 mr-3" />
                         {blok.contact}</li>
-                        <li className="flex"><FontAwesomeIcon icon={faBus} className="h-18 col-start-2 mr-3" />
+                        <li className="flex items-center"><FontAwesomeIcon icon={faBus} className="h-18 col-start-2 mr-3" />
                         {blok.transport}</li>
                         </ul>
 

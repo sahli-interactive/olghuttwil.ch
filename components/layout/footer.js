@@ -6,7 +6,7 @@ import { faCircleDollarToSlot } from "@fortawesome/pro-regular-svg-icons"
 
 const Footer = ({ blok }) => {
     return (
-        <nav className="w-screen flex justify-between gap-24 bg-blue-500 border-blue-700 mt-24 h-fit px-40 py-14">
+        <nav className=" flex justify-between gap-24 bg-blue-500 border-blue-700 mt-24 h-fit px-40 py-14">
 
             <div className="flex justify-between flex-col items-start gap-6 text-white">
                 <div className="flex gap-4">

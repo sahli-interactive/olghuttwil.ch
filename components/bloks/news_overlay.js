@@ -32,11 +32,13 @@ function NewsOverlay({ blok, isOpen, setIsOpen }) {
                     </div>
 
                     <div className="col-span-4 p-8">
+                        <div className='flex justify-between'>
+                        <Dialog.Title className="h3">{blok.headline}</Dialog.Title>
                         <button onClick={() => setIsOpen(false)} className="relative">
                             <span className="sr-only">Schliessen</span>
                             <FontAwesomeIcon icon={faXmark} className="h-6" />
                         </button>
-                        <Dialog.Title className="h3">{blok.headline}</Dialog.Title>
+                        </div>
                         <Dialog.Description className="p mt-4 mb-8">{blok.overlay_text}</Dialog.Description>
                         {blok.button && blok.button.map(blok => (
                             <StoryblokComponent key={blok._uid} blok={blok} />

@@ -8,9 +8,9 @@ function Table({ blok }) {
             <table>
                 <tbody>
                     {blok.table.tbody.map((tr, trIndex) => (
-                        <tr key={trIndex} className="p grid grid-cols-12 gap-4">
+                        <tr key={trIndex} className="p grid grid-cols-12 gap-4 my-2">
                             {tr.body.map((td, tdIndex) => (
-                                <td key={tdIndex} className={tdIndex === 2 ? 'col-span-6' : 'col-span-3'}>{td.value} {tdIndex}</td>
+                                <td key={tdIndex} className={tdIndex === 2 ? 'col-span-6' : 'col-span-3'}>{td.value}</td>
                             ))}
                         </tr>
                     ))}
