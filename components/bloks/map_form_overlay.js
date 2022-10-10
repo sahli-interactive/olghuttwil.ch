@@ -3,7 +3,7 @@ import { Dialog } from "@headlessui/react"
 import { useForm, Controller } from "react-hook-form"
 import { MapsContext } from "../../pages/[...slug]"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleDown } from "@fortawesome/pro-regular-svg-icons"
+import { faAngleDown, faThumbsUp, faXmark } from "@fortawesome/pro-regular-svg-icons"
 import dayjs from 'dayjs'
 import 'dayjs/locale/de'
 
@@ -26,7 +26,7 @@ function TextField({ name, label, placeholder, type, className, register, errors
 				placeholder={placeholder}
 				type={type || 'text'}
 				defaultValue={defaultValue}
-				className={errors[name] && 'border border-red-700'}
+				className={errors[name] && 'border-2 border-red-700'}
 				{...register(name, {
 					required: required ? 'Dieses Feld muss ausgefüllt sein' : false,
 					validate: (value) => {
@@ -160,9 +160,24 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 							</div>
 						</form>
 					) : (
-						<div>
-							<h3 className="text-green-700">Bestellung versendet!</h3>
-						</div>
+					
+
+						<div className="grid grid-cols-12 gap-2">
+							
+							
+								<FontAwesomeIcon icon={faThumbsUp} className="h-8 col-start-1 text-green-700" />
+								<h3 className="text-green-700 col-start-2 col-span-8">Bestellung versendet!</h3>
+							
+							<div className="col-span-2 col-start-12 p-2">
+								<button onClick={() => setIsOpen(false)} className="relative">
+									<span className="sr-only">Schliessen</span>
+									<FontAwesomeIcon icon={faXmark} className="h-6" />
+								</button></div>
+							<p className=" font-sm col-start-2">Sie werden bald von uns per E-Mail kontaktiert.</p>
+						
+
+							
+							</div>
 					)}
 				</Dialog.Panel>
 			</div>

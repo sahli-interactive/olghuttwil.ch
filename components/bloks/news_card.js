@@ -14,7 +14,7 @@ function NewsCard({ blok }) {
             <a
                 onClick={handleClick}
                 href="#"
-                className="relative col-span-4 bg-white rounded-r-50 z-10  flex flex-col h-fit gap-4 bottom-0 left-0 border-l-4 border-blue-500 relative bg-white rounded-br-50 z-10 hover:border-blue-500 hover:text-blue-500"
+                className="relative col-span-4 bg-white rounded-r-50 z-10  flex flex-col max-h-min gap-4 border-l-4 border-blue-500 relative bg-white rounded-br-50 z-10 hover:border-blue-500 hover:text-blue-500"
             >
                 {blok.picture?.filename && (
                     <div className="relative aspect-square">
