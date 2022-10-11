@@ -7,7 +7,7 @@ function PartnerlogoGrid({ blok }) {
             <div className="mt-4 flex justify-between gap-4">
                 {blok.partnerlogo && blok.partnerlogo.map(blok => (
                     
-                        <StoryblokComponent blok={blok} />
+                        <StoryblokComponent key={blok._uid} blok={blok} />
                     
                 ))}
             </div>
