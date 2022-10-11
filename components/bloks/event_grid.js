@@ -21,7 +21,7 @@ function EventGrid({ blok }) {
                             <button
                                 key={index}
                                 onClick={() => setActiveTag(tag)}
-                                className={`px-6 py-4 whitespace-nowrap rounded-full flex inline-flex bg-white hover:bg-yellow text-blue-700 h-14 font-semibold ${tag === activeTag ? 'bg-yellow drop-shadow-lg' : ' border-blue-700 border-3'}`}
+                                className={`px-6 py-4 whitespace-nowrap rounded-full flex inline-flex bg-white hover:bg-yellow text-blue-700 h-14 font-semibold ${tag === activeTag ? 'bg-yellow border-3 border-yellow drop-shadow-lg' : ' border-blue-700 border-3'}`}
                             >
                                 {tagStrings[tag]}
                             </button>

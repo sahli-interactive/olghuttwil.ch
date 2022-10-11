@@ -4,7 +4,7 @@ function Table({ blok }) {
     console.log(blok);
     return (
         <section className="mt-2" {...storyblokEditable}>
-            {blok.headline && <h4 className="uppercase font-bold">{blok.headline}</h4>}
+            {blok.headline && <h4 className="font-bold">{blok.headline}</h4>}
             <table>
                 <tbody>
                     {blok.table.tbody.map((tr, trIndex) => (
