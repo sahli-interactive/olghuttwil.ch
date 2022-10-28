@@ -1,26 +1,26 @@
 @layer base {
    h1,
    .h1 {
-      @apply text-2xl font-bold col-span-10 col-start-2;
+      @apply md:text-4xl text-3xl font-bold col-span-10 col-start-2;
    }
 
    h2,
    .h2 {
-      @apply text-xl font-bold col-span-10 col-start-2;
+      @apply md:text-3xl text-xl font-bold col-span-10 col-start-2;
    }
 
    h3,
    .h3 {
-      @apply text-lg font-bold col-span-10 col-start-2;
+      @apply md:text-xl text-lg font-bold col-span-10 col-start-2;
    }
 
    h4,
    .h4 {
-      @apply text-lg font-bold;
+      @apply text-base font-bold;
    }
 
    p,
    .p {
-      @apply text-base font-normal col-span-10 col-start-2;
+      @apply md:text-lg text-base font-normal col-span-10 col-start-2;
    }
 }

@@ -5,7 +5,7 @@ import Image from "next/image"
 
 function TeamCard({ blok }) {
     return (
-        <div className="relative col-span-4 max-w-sm bg-white rounded-r-50 z-10  flex flex-col h-full gap-4 bottom-0 left-0 border-l-4 border-blue-500">
+        <div className="relative col-span-12 md:col-span-4 max-w-sm bg-white rounded-r-50 z-10 flex flex-col h-full gap-4 bottom-0 left-0 border-l-4 border-blue-500">
 
             {blok.picture?.filename && (
                 <div className="relative aspect-square">
@@ -20,8 +20,8 @@ function TeamCard({ blok }) {
                     /></div>
             )}
             <div className="p-8 flex flex-col gap-3">
-                {blok.name && <h4 className="h4 text-base font-light">{blok.name}</h4>}
-                {blok.function && <h3 className="text-2xl font-bold">{blok.function}</h3>}
+                {blok.name && <h4 className="font-light">{blok.name}</h4>}
+                {blok.function && <h3>{blok.function}</h3>}
                 <div className="flex flex-wrap justify-between gap-2 mt-5">
                     {blok.button && blok.button.map(blok => (
                         <StoryblokComponent key={blok._uid} blok={blok} />

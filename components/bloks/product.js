@@ -6,7 +6,7 @@ function Product({ blok }) {
     let [isOpen, setIsOpen] = useState(null)
     return (
         <>
-            <div className="col-span-4 flex flex-col gap-4 h-full rounded-br-50 border-l-4 p-10 border-yellow bg-white" {...storyblokEditable(blok)}>
+            <div className="col-span-12 md:col-span-4 flex flex-col gap-4 h-full rounded-br-50 border-l-4 p-10 border-yellow bg-white" {...storyblokEditable(blok)}>
                 {blok.headline && <h3 className="text-2xl text-blue-700 font-bold">{blok.headline}</h3>}
                 <div className="grid grid-cols-3 gap-2 mt-2">
                     <div>

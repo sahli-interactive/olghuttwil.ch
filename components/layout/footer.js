@@ -27,7 +27,7 @@ const Footer = ({ blok }) => {
                     </div>
                     <p>{blok.text}</p>
                 </div>
-                <div className="col-start-1 col-span-12 md:col-start-4  md:col-span-9 grid grid-cols-12 md:grid-cols-9 gap-4">
+                <div className="col-start-1 col-span-12 md:col-start-4  md:col-span-9 grid grid-cols-12 md:grid-cols-9 gap-4 md:mt-0 mt-8">
                     {/* <pre>{JSON.stringify(blok.partnerlogo_grid, null, 2)}</pre> */}
                     {blok.partnerlogo_grid && blok.partnerlogo_grid.map(blok => (
                         <StoryblokComponent key={blok._uid} blok={blok} />
