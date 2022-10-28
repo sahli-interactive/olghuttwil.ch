@@ -17,7 +17,7 @@ function NewsCard({ blok }) {
             <a
                 onClick={handleClick}
                 href="#"
-                className="relative col-span-4 bg-white rounded-r-50 z-10  flex flex-col max-h-min gap-4 border-l-4 border-blue-700 relative bg-white rounded-br-50 z-10 hover:border-blue-500 hover:text-blue-500"
+                className="relative col-span-12 md:col-span-4 bg-white rounded-r-50 z-10  flex flex-col max-h-min gap-4 border-l-4 border-blue-700 relative bg-white rounded-br-50 z-10 hover:border-blue-500 hover:text-blue-500"
             >
                 {blok.picture?.filename && (
                     <div className="relative aspect-square">
@@ -28,16 +28,16 @@ function NewsCard({ blok }) {
                             objectFit="cover"
                             placeholder="blur"
                             blurDataURL={blok.picture.filename + '/m/50x0'}
-                            className=" top-0 left-0 w-full h-3/5 rounded-tr-50"
+                            className=" top-0 left-0 w-full md:h-3/5 rounded-tr-50"
                         />
                     </div>
                 )}
-                <div className="p-8 flex flex-col gap-3">
+                <div className="p-6 md:p-7 flex flex-col gap-3">
                     <div className="flex justify-between">
-                    {blok.location && <h4 className="h4 text-base font-light">{blok.location}</h4>}
-                    {date && <h4 className="h4 text-base font-light">{date}</h4>}
+                    {blok.location && <h4 className="text-base font-light">{blok.location}</h4>}
+                    {date && <h4 className="text-base font-light">{date}</h4>}
                     </div>
-                    {blok.headline && <h3 className="text-2xl font-bold">{blok.headline}</h3>}
+                    {blok.headline && <h3 className="md:text-2xl font-bold">{blok.headline}</h3>}
                 </div>
             </a>
             <NewsOverlay blok={blok} isOpen={isOpen} setIsOpen={setIsOpen} />
