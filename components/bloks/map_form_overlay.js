@@ -43,7 +43,7 @@ function TextField({ name, label, placeholder, type, className, register, errors
 function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 	let [isSuccess, setIsSuccess] = useState(false)
 
-	const { register, handleSubmit, watch, control, reset, formState: { errors } } = useForm()
+	const { register, handleSubmit, formState: { errors } } = useForm()
 
 	const maps = useContext(MapsContext)
 
@@ -55,6 +55,7 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 
 	function onSubmit(formData) {
 		formData.occasionDate = dayjs(formData.occasionDate).locale('de-ch').format('dd, DD.MM.YYYY')
+		console.log(formData)
 		fetch("/favicon.ico", {
 			body: encode({
 				'form-name': 'map-order',
