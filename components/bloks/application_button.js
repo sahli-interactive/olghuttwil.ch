@@ -78,52 +78,52 @@ function ApplicationFormOverlay({ isOpen, setIsOpen, blok }) {
       <Dialog.Backdrop className="fixed inset-0 bg-black/40 z-10" />
       <div className="fixed inset-0 flex items-start justify-center p-8 overflow-auto">
         <Dialog.Panel className="p-12 bg-gray-100 rounded-50 w-full max-w-3xl">
-          <div className="mb-6">
-            {blok.form_headline && <h2 className="mb-4">{blok.form_headline}</h2>}
-            {blok.form_text && (
-              <div className="richtext columns-2">
-                <RichTextRenderer text={blok.form_text} />
-              </div>
-            )}
-          </div>
           {!isSuccess ? (
-            <form name="application" onSubmit={handleSubmit(onSubmit)} data-netlify="true" className="grid grid-cols-6 gap-x-5 gap-y-4">
-              <input type="hidden" name="form-name" value="application" />
-              {textFields.map((field, index) => (
-                <TextField
-                  key={index}
-                  name={field.name}
-                  label={field.label}
-                  placeholder={field.placeholder}
-                  type={field.type}
-                  register={register}
-                  errors={errors}
-                  required={field.required === false ? false : true}
-                  className={field.className}
-                />
-              ))}
-              <div className="col-span-full flex justify-end gap-3">
-                <button onClick={() => setIsOpen(null)} className="btn btn-secondary">
-                  Abbrechen
-                </button>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                >
-                  {blok.label}
-                </button>
+            <>
+              <div className="mb-6">
+                {blok.form_headline && <h2 className="mb-4">{blok.form_headline}</h2>}
+                {blok.form_text && (
+                  <div className="richtext columns-2">
+                    <RichTextRenderer text={blok.form_text} />
+                  </div>
+                )}
               </div>
-            </form>
+              <form name="application" onSubmit={handleSubmit(onSubmit)} data-netlify="true" className="grid grid-cols-6 gap-x-5 gap-y-4">
+                <input type="hidden" name="form-name" value="application" />
+                {textFields.map((field, index) => (
+                  <TextField
+                    key={index}
+                    name={field.name}
+                    label={field.label}
+                    placeholder={field.placeholder}
+                    type={field.type}
+                    register={register}
+                    errors={errors}
+                    required={field.required === false ? false : true}
+                    className={field.className}
+                  />
+                ))}
+                <div className="col-span-full flex justify-end gap-3">
+                  <button onClick={() => setIsOpen(null)} className="btn btn-secondary">
+                    Abbrechen
+                  </button>
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                  >
+                    {blok.label}
+                  </button>
+                </div>
+              </form>
+            </>
           ) : (
-            <div className="grid grid-cols-12 gap-2">
-              <FontAwesomeIcon icon={faThumbsUp} className="h-8 col-start-1 text-green-700" />
-              <h3 className="text-green-700 col-start-2 col-span-8">Bestellung versendet!</h3>
-              <div className="col-span-2 col-start-12 p-2">
-                <button onClick={() => setIsOpen(false)} className="relative">
-                  <span className="sr-only">Schliessen</span>
-                  <FontAwesomeIcon icon={faXmark} className="h-6" />
-                </button></div>
-              <p className=" font-sm col-start-2">Sie werden bald von uns per E-Mail kontaktiert.</p>
+            <div>
+              <FontAwesomeIcon icon={faThumbsUp} className="mb-4 text-3xl text-green-700" />
+              <h3 className="text-green-700">{blok.success_headline}</h3>
+              <p className="mb-4 font-sm">{blok.success_text}</p>
+              <button onClick={() => setIsOpen(false)} className="btn btn-primary">
+                Schliessen
+              </button>
             </div>
           )}
         </Dialog.Panel>
@@ -138,7 +138,7 @@ function ApplicationButton({ blok }) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="self-start px-6 py-4 rounded-full inline-flex font-semibold text-white bg-blue-700 hover:bg-blue-500"
+        className="btn btn-primary self-start"
         {...storyblokEditable(blok)}
       >
         {blok.label}
