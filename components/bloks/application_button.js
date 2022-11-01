@@ -55,7 +55,7 @@ function ApplicationFormOverlay({ isOpen, setIsOpen, blok }) {
   }
 
   function onSubmit(formData) {
-    formData.birthDate = dayjs(formData.birthDate).locale('de-ch').format('dd, DD.MM.YYYY')
+    formData.birthDate = dayjs(formData.birthDate).locale('de-ch').format('DD.MM.YYYY')
     fetch("/favicon.ico", {
       body: encode({
         'form-name': 'application',

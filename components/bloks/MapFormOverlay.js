@@ -47,6 +47,7 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 	const { register, handleSubmit, formState: { errors } } = useForm()
 
 	const maps = useContext(MapsContext)
+	const formatLabels = {'print': 'Ausdruck (Postversand)', 'ocadFile': 'OCAD-File (Download)'}
 
 	function handleChange(event) {
 		setFormat(event.target.value)
@@ -60,10 +61,11 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 
 	function onSubmit(formData) {
 		formData.occasionDate = dayjs(formData.occasionDate).locale('de-ch').format('dd, DD.MM.YYYY')
+		console.log(formData)
 		fetch("/favicon.ico", {
 			body: encode({
 				'form-name': 'map-order',
-				format,
+				format: formatLabels[format],
 				...formData,
 			}),
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -108,15 +110,15 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 										defaultValue="1"
 										required={true}
 									/>
-									<fieldset className="form-control radio-group col-span-3 col-start-4" onChange={handleChange}>
+									<fieldset className="form-control radio-group col-span-3 col-start-4">
 										<legend>Format</legend>
 										<label>
-											<input type="radio" name="format" value="print" checked={format === 'print' ? true : false} />
-											<span>Ausdruck (Postversand)</span>
+											<input type="radio" name="format" value="print" onChange={handleChange} checked={format === 'print' ? true : false} />
+											<span>{formatLabels['print']}</span>
 										</label>
 										<label>
-											<input type="radio" name="format" value="ocadFile" checked={format === 'ocadFile' ? true : false} />
-											<span>OCAD-Datei (Download)</span>
+											<input type="radio" name="format" value="ocadFile" onChange={handleChange} checked={format === 'ocadFile' ? true : false} />
+											<span>{formatLabels['ocadFile']}</span>
 										</label>
 									</fieldset>
 									<TextField
