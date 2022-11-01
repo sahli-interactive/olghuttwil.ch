@@ -3,6 +3,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react";
 import home from "../components/content_types/home"
 import header from "../components/bloks/header"
 import verein from "../components/content_types/verein"
+import application_button from "../components/bloks/application_button"
 import button from "../components/bloks/button"
 import team_grid from "../components/bloks/team_grid"
 import team_card from "../components/bloks/team_card"
@@ -48,6 +49,7 @@ storyblokInit({
     partnerlogo_grid,
     event_card,
     event_grid,
+    application_button,
     button,
     team_card,
     team_grid,

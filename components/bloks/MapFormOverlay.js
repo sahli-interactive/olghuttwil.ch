@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { Dialog } from "@headlessui/react"
-import { useForm, Controller } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { MapsContext } from "../../pages/[...slug]"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleDown, faThumbsUp, faXmark } from "@fortawesome/pro-regular-svg-icons"

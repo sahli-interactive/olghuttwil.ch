@@ -1,9 +1,9 @@
 import { storyblokEditable } from "@storyblok/react"
 import { useState } from "react"
-import MapFormOverlay from "./map_form_overlay"
+import MapFormOverlay from "./MapFormOverlay"
 
 function Product({ blok }) {
-    let [isOpen, setIsOpen] = useState(null)
+    const [isOpen, setIsOpen] = useState(null)
     return (
         <>
             <div className="col-span-12 md:col-span-4 flex flex-col gap-4 h-full rounded-br-50 border-l-4 p-10 border-yellow bg-white" {...storyblokEditable(blok)}>

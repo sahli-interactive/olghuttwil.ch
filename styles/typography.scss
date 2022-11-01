@@ -23,4 +23,10 @@
    .p {
       @apply md:text-lg text-base font-normal col-span-10 col-start-2;
    }
+
+   .richtext {
+      p:not(:last-child) {
+         @apply mb-3;
+      }
+   }
 }
