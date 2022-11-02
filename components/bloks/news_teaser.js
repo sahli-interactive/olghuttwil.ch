@@ -18,7 +18,7 @@ function NewsTeaser({ blok }) {
 </div>
 
             
-<div className="col-start-1 grid grid-cols-12 col-span-12 gap-4 mt-9">
+<div className="mt-9">
             {blok.button && blok.button.map(blok => (
                 <StoryblokComponent key={blok._uid} blok={blok} />
             ))}

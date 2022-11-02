@@ -16,12 +16,12 @@ function EventGrid({ blok }) {
                 <div className="col-span-12 col-start-1">
                     {blok.headline && <h2 className="font-bold">{blok.headline}</h2>}
                     <div className="flex flex-wrap gap-4 mt-8 mb-4 overflow-hidden">
-                        <button onClick={() => setActiveTag(null)} className={`btn btn-secundary bg-white ${activeTag === null ? ' bg-yellow border-4 border-yellow' : ' border-blue-700 border-4'}`}>Alle</button>
+                        <button onClick={() => setActiveTag(null)} className={`btn btn-secundary ${activeTag === null ? ' bg-yellow border-4 border-yellow' : ' border-blue-700 border-4'}`}>Alle</button>
                         {blok.tags && blok.tags.map((tag, index) => (
                             <button
                                 key={index}
                                 onClick={() => setActiveTag(tag)}
-                                className={`btn btn-secundary bg-white ${tag === activeTag ? 'bg-yellow border-4 border-yellow' : ' border-blue-700 border-4'}`}
+                                className={`btn btn-secundary ${tag === activeTag ? 'bg-yellow border-4 border-yellow' : ' border-blue-700 border-4'}`}
                             >
                                 {tagStrings[tag]}
                             </button>
