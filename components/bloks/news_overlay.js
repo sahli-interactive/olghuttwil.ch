@@ -36,9 +36,9 @@ function NewsOverlay({ blok, isOpen, setIsOpen }) {
                         )}
                     </div>
 
-                    <div className="col-span-7 md:col-span-4 md:p-8">
+                    <div className="col-span-7 md:col-span-4 md:px-4">
                         <div className='flex justify-between'>
-                        <Dialog.Title className="">{blok.headline}</Dialog.Title>
+                        <Dialog.Title className="w-72 break-words">{blok.headline}</Dialog.Title>
                         <button onClick={() => setIsOpen(false)} className="relative hidden md:block">
                             <span className="sr-only">Schliessen</span>
                             <FontAwesomeIcon icon={faXmark} className="h-6" />

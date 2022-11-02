@@ -28,7 +28,7 @@ function TeamCard({ blok }) {
                         <StoryblokComponent key={blok._uid} blok={blok} />
                     ))}
                     {blok.phone_number &&
-                        <a href={`tel:${blok.phone_number}`} className="inline-flex p-4 text-blue-500 border-3 border-blue-500 rounded-full w-fit ">
+                        <a href={`tel:${blok.phone_number}`} className="btn btn-secundary max-h-14 aspect-square border-4 border-blue-700 text-blue-700 font-bold hover:border-blue-500 hover:text-blue-500">
                             <span className="sr-only">Anrufen</span>
                             <FontAwesomeIcon icon={faPhone} />
                         </a>

@@ -3,7 +3,7 @@ import { StoryblokComponent } from "@storyblok/react"
 function Kontakt({ blok }) {
   return (
     <>
-      <header className="container pt-48 grid grid-cols-12 gap-4 items-center">
+      <header className="container mt-40 grid grid-cols-12 gap-4 items-center">
         {blok.headline && <h1 className="col-start-1 mb-8">{blok.headline}</h1>}
       </header>
       <main className="container">
