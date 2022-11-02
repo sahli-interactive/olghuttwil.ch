@@ -8,13 +8,13 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/de'
 
 const textFields = [
-	{ name: 'firstName', label: 'Vorname', placeholder: 'Vanessa', className: 'col-span-3' },
-	{ name: 'lastName', label: 'Nachname', placeholder: 'Muster', className: 'col-span-3' },
+	{ name: 'firstName', label: 'Vorname', placeholder: 'Vanessa', className: 'col-span-6 md:col-span-3' },
+	{ name: 'lastName', label: 'Nachname', placeholder: 'Muster', className: 'col-span-6 md:col-span-3' },
 	{ name: 'phoneNumber', type: 'tel', label: 'Telefonnummer', placeholder: '+41 00 000 00 00' },
 	{ name: 'email', type: 'email', label: 'E-Mail', placeholder: 'vanessa@muster.ch' },
 	{ name: 'street', label: 'Strasse und Hausnummer', placeholder: 'Musterstrasse 5' },
-	{ name: 'zipCode', label: 'PLZ', placeholder: '3000', className: 'col-span-2' },
-	{ name: 'city', label: 'Ort', placeholder: 'Bern', className: 'col-span-4' },
+	{ name: 'zipCode', label: 'PLZ', placeholder: '3000', className: 'col-span-6 md:col-span-2' },
+	{ name: 'city', label: 'Ort', placeholder: 'Bern', className: 'col-span-6 md:col-span-4' },
 ]
 
 function TextField({ name, label, placeholder, type, className, register, errors, required, defaultValue }) {
@@ -106,11 +106,11 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 										type="number"
 										register={register}
 										errors={errors}
-										className="col-span-2"
+										className="col-span-full md:col-span-2"
 										defaultValue="1"
 										required={true}
 									/>
-									<fieldset className="form-control radio-group col-span-3 col-start-4">
+									<fieldset className="form-control radio-group col-span-full md:col-span-3 md:col-start-4">
 										<legend>Format</legend>
 										<label>
 											<input type="radio" name="format" value="print" onChange={handleChange} checked={format === 'print' ? true : false} />
@@ -155,7 +155,7 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 									))}
 								</li>
 							</ol>
-							<div className="col-span-full flex justify-end gap-3">
+							<div className="col-span-full flex flex-wrap justify-end gap-3">
 								<button onClick={() => setIsOpen(null)} className="btn btn-secondary">
 									Abbrechen
 								</button>

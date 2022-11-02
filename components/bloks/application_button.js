@@ -9,16 +9,16 @@ import 'dayjs/locale/de'
 import RichTextRenderer from "../helpers/rich-text-renderer"
 
 const textFields = [
-  { name: 'firstName', label: 'Vorname', placeholder: 'Vanessa', className: 'col-span-3' },
-  { name: 'lastName', label: 'Nachname', placeholder: 'Muster', className: 'col-span-3' },
-  { name: 'phoneNumber', type: 'tel', label: 'Telefonnummer', placeholder: '+41 00 000 00 00', className: 'col-span-3' },
-  { name: 'email', type: 'email', label: 'E-Mail', placeholder: 'vanessa@muster.ch', className: 'col-span-3' },
-  { name: 'birthDate', type: 'date', label: 'Geburtsdatum', placeholder: '01.01.1970', className: 'col-span-2' },
+  { name: 'firstName', label: 'Vorname', placeholder: 'Vanessa', className: 'col-span-full md:col-span-3' },
+  { name: 'lastName', label: 'Nachname', placeholder: 'Muster', className: 'col-span-full md:col-span-3' },
+  { name: 'phoneNumber', type: 'tel', label: 'Telefonnummer', placeholder: '+41 00 000 00 00', className: 'col-span-full md:col-span-3' },
+  { name: 'email', type: 'email', label: 'E-Mail', placeholder: 'vanessa@muster.ch', className: 'col-span-full md:col-span-3' },
+  { name: 'birthDate', type: 'date', label: 'Geburtsdatum', placeholder: '01.01.1970', className: 'col-span-full md:col-span-2' },
   { name: 'street', label: 'Strasse und Hausnummer', placeholder: 'Musterstrasse 5' },
-  { name: 'zipCode', label: 'PLZ', placeholder: '3000', className: 'col-span-2' },
-  { name: 'city', label: 'Ort', placeholder: 'Bern', className: 'col-span-4' },
-  { name: 'siCard', label: 'SI-Card-Nummer', placeholder: '', required: false, className: 'col-span-3' },
-  { name: 'solv', label: 'SOLV-Nummer', placeholder: '', required: false, className: 'col-span-3' },
+  { name: 'zipCode', label: 'PLZ', placeholder: '3000', className: 'col-span-full md:col-span-2' },
+  { name: 'city', label: 'Ort', placeholder: 'Bern', className: 'col-span-full md:col-span-4' },
+  { name: 'siCard', label: 'SI-Card-Nummer', placeholder: '', required: false, className: 'col-span-full md:col-span-3' },
+  { name: 'solv', label: 'SOLV-Nummer', placeholder: '', required: false, className: 'col-span-full md:col-span-3' },
 ]
 
 function TextField({ name, label, placeholder, type, className, register, errors, required, defaultValue }) {
@@ -80,9 +80,15 @@ function ApplicationFormOverlay({ isOpen, setIsOpen, blok }) {
           {!isSuccess ? (
             <>
               <div className="mb-6">
+                <div className="mb-6 flex justify-between top-0">
                 {blok.form_headline && <h2 className="mb-4">{blok.form_headline}</h2>}
+                <button onClick={() => setIsOpen(false)} className="relative">
+                            <span className="sr-only">Schliessen</span>
+                            <FontAwesomeIcon icon={faXmark} className="h-6" />
+                        </button>
+                        </div>
                 {blok.form_text && (
-                  <div className="richtext columns-2">
+                  <div className="richtext md:columns-2">
                     <RichTextRenderer text={blok.form_text} />
                   </div>
                 )}
@@ -102,7 +108,7 @@ function ApplicationFormOverlay({ isOpen, setIsOpen, blok }) {
                     className={field.className}
                   />
                 ))}
-                <div className="col-span-full flex justify-end gap-3">
+                <div className="col-span-full flex justify-end flex-wrap gap-3 mt-8">
                   <button onClick={() => setIsOpen(null)} className="btn btn-secondary">
                     Abbrechen
                   </button>

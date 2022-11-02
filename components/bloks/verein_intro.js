@@ -8,7 +8,7 @@ const VereinIntro = ({ blok }) => {
     const contactPersons = blok.contact_persons.split(', ')
     return (
         <div className="grid grid-cols-12 gap-4 container" {...storyblokEditable(blok)}>
-            <div className="mt-8 md:mt-36 col-span-12 md:col-span-4 flex flex-col gap-4 bottom-0 left-0">
+            <div className="mt-36 col-span-12 md:col-span-4 flex flex-col gap-4 bottom-0 left-0">
                 {blok.title && <h1 className="h1 text-4xl font-bold">{blok.title}</h1>}
                 {blok.text && <p className="text-lg pr-12">{blok.text}</p>}
                 {blok.buttons && blok.buttons.map(blok => (

@@ -17,7 +17,8 @@ function TeamCard({ blok }) {
                         placeholder="blur"
                         blurDataURL={blok.picture.filename + '/m/50x0'}
                         className=" top-0 left-0 w-full h-3/5 rounded-tr-50"
-                    /></div>
+                    />
+                </div>
             )}
             <div className="p-8 flex flex-col gap-3">
                 {blok.name && <h4 className="font-light">{blok.name}</h4>}
