@@ -81,12 +81,12 @@ function ApplicationFormOverlay({ isOpen, setIsOpen, blok }) {
             <>
               <div className="mb-6">
                 <div className="mb-6 flex justify-between top-0">
-                {blok.form_headline && <h2 className="mb-4">{blok.form_headline}</h2>}
-                <button onClick={() => setIsOpen(false)} className="relative">
-                            <span className="sr-only">Schliessen</span>
-                            <FontAwesomeIcon icon={faXmark} className="h-6" />
-                        </button>
-                        </div>
+                  {blok.form_headline && <h2 className="mb-4">{blok.form_headline}</h2>}
+                  <button onClick={() => setIsOpen(false)} className="relative">
+                    <span className="sr-only">Schliessen</span>
+                    <FontAwesomeIcon icon={faXmark} className="h-6" />
+                  </button>
+                </div>
                 {blok.form_text && (
                   <div className="richtext md:columns-2">
                     <RichTextRenderer text={blok.form_text} />

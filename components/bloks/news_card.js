@@ -17,7 +17,7 @@ function NewsCard({ blok }) {
             <a
                 onClick={handleClick}
                 href="#"
-                className="relative col-span-12 md:col-span-4 bg-white rounded-r-50 z-10  flex flex-col max-h-min gap-4 border-l-4 border-blue-700 relative bg-white rounded-br-50 z-10 hover:border-blue-500 hover:text-blue-500"
+                className="relative col-span-12 md:col-span-4 bg-white rounded-r-50 z-10 flex flex-col max-h-min gap-4 border-l-4 border-blue-700 relative bg-white rounded-br-50 z-10 hover:border-blue-500 hover:text-blue-500"
             >
                 {blok.picture?.filename && (
                     <div className="relative aspect-square">
@@ -28,7 +28,7 @@ function NewsCard({ blok }) {
                             objectFit="cover"
                             placeholder="blur"
                             blurDataURL={blok.picture.filename + '/m/50x0'}
-                            className=" top-0 left-0 w-full md:h-3/5 rounded-tr-50"
+                            className="rounded-tr-50"
                         />
                     </div>
                 )}

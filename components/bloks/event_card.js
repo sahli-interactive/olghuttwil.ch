@@ -16,7 +16,7 @@ function EventCard({ blok }) {
             <a
                 onClick={handleClick}
                 href="#"
-                className="col-span-12 relative bg-white rounded-br-50 z-10 flex flex-col h-full gap-4 bottom-0 left-0 border-l-4 border-blue-700 hover:drop-shadow-lg hover:border-blue-500 hover:text-blue-500"
+                className="relative bg-white rounded-br-50 z-10 flex flex-col h-full gap-4 bottom-0 border-l-4 border-blue-700 hover:drop-shadow-lg hover:border-blue-500 hover:text-blue-500"
             >
                 <div className="p-6 md:p-7 flex flex-col gap-3">
                     <div className="flex flex-row justify-between">

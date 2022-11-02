@@ -61,7 +61,6 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 
 	function onSubmit(formData) {
 		formData.occasionDate = dayjs(formData.occasionDate).locale('de-ch').format('dd, DD.MM.YYYY')
-		console.log(formData)
 		fetch("/favicon.ico", {
 			body: encode({
 				'form-name': 'map-order',

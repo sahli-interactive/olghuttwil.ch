@@ -5,7 +5,7 @@ function Partnerlogo({ blok }) {
     let link = blok.link.url || '#'
     return (
         <Link href={link} >
-            <a target='_blank' rel="noreferrer" className="col-span-6 md:col-span-4 grid place-items-center aspect-square bg-white md:h-40 rounded-50 hover:drop-shadow-lg">
+            <a target='_blank' rel="noreferrer" className="col-span-6 md:col-span-2 grid place-items-center aspect-square bg-white md:h-40 rounded-50 hover:drop-shadow-lg">
                 <img
                     src={blok.picture.filename}
                     alt={blok.picture.alt}

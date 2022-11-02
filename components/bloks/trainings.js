@@ -1,7 +1,6 @@
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react"
 
 function Trainings({ blok }) {
-    console.log(blok);
     return (
         <section className="container flex flex-col gap-2" {...storyblokEditable}>
             {blok.title && <h2 className="mt-8">{blok.title}</h2>}

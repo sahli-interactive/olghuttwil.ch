@@ -1,7 +1,6 @@
 import { storyblokEditable } from "@storyblok/react"
 
 function Table({ blok }) {
-    console.log(blok);
     return (
         <section className="mt-4 md:mt-2" {...storyblokEditable}>
             {blok.headline && <h4 className="font-bold">{blok.headline}</h4>}
