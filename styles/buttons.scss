@@ -1,6 +1,6 @@
 @layer components {
   .btn {
-    @apply inline-flex w-fit justify-center whitespace-nowrap items-center px-6 py-3 border-3 rounded-full font-semibold hover:cursor-pointer;
+    @apply inline-flex w-fit justify-center items-center px-6 py-3 border-3 rounded-full font-semibold hover:cursor-pointer;
 
     &.btn-primary {
       @apply border-3 border-blue-700 hover:border-blue-500 text-white bg-blue-700 hover:bg-blue-500;

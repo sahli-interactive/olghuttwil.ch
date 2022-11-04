@@ -20,6 +20,9 @@ module.exports = {
         '50': '50px',
         '20': '20px',
       },
+      ringWidth: {
+        '3': '3px',
+      },
     },
   },
   variants: {

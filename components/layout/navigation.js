@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 
 function NavLink({ blok, currentStory }) {
     return (
-        <Link href={blok.link.story ? blok.link.story.full_slug : '#'}>
+        <Link href={blok.link.story ? `/${blok.link.story.full_slug}` : '#'}>
             <a className="p-2 font-semibold">
                 <span className={`px-2 border-l-3${currentStory.full_slug === blok.link.story?.full_slug ? ' border-blue-700 text-blue-700' : ' border-transparent hover:text-blue-500'}`}>
                     {blok.link.story?.name}
