@@ -5,7 +5,7 @@ import Image from "next/image"
 
 function TeamCard({ blok }) {
     return (
-        <div className="relative col-span-12 md:col-span-4 max-w-sm bg-white rounded-r-50 z-10 flex flex-col h-full gap-4 bottom-0 left-0 border-l-4 border-blue-500">
+        <div className="relative col-span-12 md:col-span-4 max-w-sm bg-white rounded-r-50 z-10 flex flex-col h-full gap-4 bottom-0 left-0 border-l-6 border-blue-700">
 
             {blok.picture?.filename && (
                 <div className="relative aspect-square">
@@ -28,7 +28,7 @@ function TeamCard({ blok }) {
                         <StoryblokComponent key={blok._uid} blok={blok} />
                     ))}
                     {blok.phone_number &&
-                        <a href={`tel:${blok.phone_number}`} className="btn btn-secundary max-h-14 aspect-square border-4 border-blue-700 text-blue-700 font-bold hover:border-blue-500 hover:text-blue-500">
+                        <a href={`tel:${blok.phone_number}`} className="btn btn-secundary max-h-14 aspect-square border-3 border-blue-700 text-blue-700 font-bold hover:border-blue-500 hover:text-blue-500">
                             <span className="sr-only">Anrufen</span>
                             <FontAwesomeIcon icon={faPhone} />
                         </a>

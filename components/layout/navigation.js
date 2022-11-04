@@ -11,7 +11,7 @@ function NavLink({ blok, currentStory }) {
     return (
         <Link href={blok.link.story ? blok.link.story.full_slug : '#'}>
             <a className="p-2 font-semibold">
-                <span className={`px-2 border-l-4${currentStory.full_slug === blok.link.story?.full_slug ? ' border-blue-700 text-blue-700' : ' border-transparent hover:text-blue-500'}`}>
+                <span className={`px-2 border-l-3${currentStory.full_slug === blok.link.story?.full_slug ? ' border-blue-700 text-blue-700' : ' border-transparent hover:text-blue-500'}`}>
                     {blok.link.story?.name}
                 </span>
             </a>
@@ -31,7 +31,7 @@ function Navigation({ global, currentStory }) {
 		}
 	})
     return (
-        <nav className="absolute top-0 left-0 right-0 mx-6 border-x-4 border-blue-700 bg-white shadow-xl z-20">
+        <nav className="absolute top-0 left-0 right-0 mx-6 border-x-6 border-blue-700 bg-white shadow-xl z-20">
             <div className="relative flex flex-row justify-between items-center p-6 md:px-12 bg-white z-10">
                 <a href="../home">
                     <Logo />

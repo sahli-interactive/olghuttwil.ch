@@ -12,7 +12,7 @@ function EventTeaser({ blok }) {
     return (
         <>
         <section className="grid grid-cols-12 gap-4 mt-16">
-            <div className="col-span-12 md:col-span-6 col-start-1 md:mt-16 flex flex-col gap-4">
+            <div className="col-span-12 md:col-span-6 col-start-1 md:mt-16 flex flex-col gap-4 md:gap-6">
                 {blok.headline_1 && <h2 className="md:text-3xl">{blok.headline_1}</h2>}
                 <div className="grid grid-rows-1 gap-4 h-full">
                 {events.content.events[0].event.filter(blok => blok.tag === 'matchsExternal' || blok.tag === 'matchsInternal').slice(0, 2).map(blok => (
@@ -20,7 +20,7 @@ function EventTeaser({ blok }) {
                 ))}
                 </div>
             </div>
-            <div className="col-span-12 md:col-span-6 col-start-1 md:col-start-7 mt-16 flex flex-col gap-4">
+            <div className="col-span-12 md:col-span-6 col-start-1 md:col-start-7 mt-16 flex flex-col gap-4 md:gap-6">
                 {blok.headline_2 && <h2 className="md:text-3xl">{blok.headline_2}</h2>}
                 <div className="grid grid-rows-2 gap-4 h-full">
                                 {events.content.events[0].event.filter(blok => blok.tag === 'trainings').slice(0, 2).map(blok => (
