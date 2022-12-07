@@ -25,6 +25,7 @@ import news_overlay from "../components/bloks/news_overlay"
 import news_teaser from "../components/bloks/news_teaser"
 import product_grid from "../components/bloks/product_grid"
 import product from "../components/bloks/product"
+import infobox from "../components/bloks/infobox"
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
@@ -56,6 +57,7 @@ storyblokInit({
     event_teaser,
     trainings,
     table,
+    infobox,
   },
 });
 

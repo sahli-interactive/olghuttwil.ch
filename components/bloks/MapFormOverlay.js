@@ -155,12 +155,12 @@ function MapFormOverlay({ isOpen, setIsOpen, blok }) {
 								</li>
 							</ol>
 							<div className="col-span-full flex flex-wrap justify-end gap-3">
-								<button onClick={() => setIsOpen(null)} className="btn btn-secondary">
+								<button onClick={() => setIsOpen(null)} className="btn btn-secondary w-full md:w-fit">
 									Abbrechen
 								</button>
 								<button
 									type="submit"
-									className="btn btn-primary"
+									className="btn btn-primary w-full md:w-fit"
 								>
 									Karte bestellen
 								</button>

@@ -9,7 +9,7 @@ function EventGrid({ blok }) {
         matchsExternal: 'Wettkämpfe (extern)',
         events: 'Anlässe',
     }
-    
+
     return (
         <>
             <div className="grid grid-cols-12 gap-4 md:gap-6 mt-6 flex-wrap container">
@@ -33,9 +33,10 @@ function EventGrid({ blok }) {
                         <div key={blok._uid} className="col-span-12 md:col-span-4">
                             <StoryblokComponent blok={blok} />
                         </div>
-                    ))}</div>
-                </div>
-           
+                    ))}
+                    </div>
+            </div>
+
         </>
     )
 }

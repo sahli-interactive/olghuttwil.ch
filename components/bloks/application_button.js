@@ -109,12 +109,12 @@ function ApplicationFormOverlay({ isOpen, setIsOpen, blok }) {
                   />
                 ))}
                 <div className="col-span-full flex justify-end flex-wrap gap-3 mt-8">
-                  <button onClick={() => setIsOpen(null)} className="btn btn-secondary">
+                  <button onClick={() => setIsOpen(null)} className="btn btn-secondary w-full md:w-fit">
                     Abbrechen
                   </button>
                   <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-primary w-full md:w-fit"
                   >
                     {blok.label}
                   </button>

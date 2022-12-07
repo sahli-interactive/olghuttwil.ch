@@ -36,7 +36,7 @@ function Product({ blok }) {
                 <button
                     type="button"
                     onClick={() => setIsOpen(blok.headline)}
-                    className="btn btn-secondary mt-4">
+                    className="btn btn-secondary mt-4 w-full">
                     Karte Bestellen
                 </button>
             </div>
