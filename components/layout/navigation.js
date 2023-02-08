@@ -33,7 +33,7 @@ function Navigation({ global, currentStory }) {
     return (
         <nav className="absolute top-0 left-0 right-0 mx-6 border-x-6 border-blue-700 bg-white shadow-xl z-20">
             <div className="relative flex flex-row justify-between items-center p-6 md:px-12 bg-white z-10">
-                <a href="../home">
+                <a href="../home" className='w-48 h-auto'>
                     <Logo />
                 </a>
                 <button onClick={() => setIsOpen(!isOpen)} className="md:hidden relative w-6 h-6 inline-flex justify-center items-center">

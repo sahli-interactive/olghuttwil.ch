@@ -6,9 +6,8 @@ const Logo = () => (
     src="/logo.png"
     alt="Logo von OLG Huttwil"
     layout="responsive"
-    placeholder="blur"
-    width="479"
-    height="95"
+    width={479}
+    height={95}
   />
 )
 
