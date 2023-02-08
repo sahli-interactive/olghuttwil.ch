@@ -26,6 +26,8 @@ import news_teaser from "../components/bloks/news_teaser"
 import product_grid from "../components/bloks/product_grid"
 import product from "../components/bloks/product"
 import infobox from "../components/bloks/infobox"
+import { config } from '@fortawesome/fontawesome-svg-core'import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 storyblokInit({
   accessToken: process.env.STORYBLOK_TOKEN,
