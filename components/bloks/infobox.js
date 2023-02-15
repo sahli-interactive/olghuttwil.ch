@@ -15,9 +15,11 @@ function Infobox({ blok }) {
                             </div>
                         )}
                     </div>
+                    <div className="flex gap-7">
                     {blok.buttons && blok.buttons.map(blok => (
                         <StoryblokComponent key={blok._uid} blok={blok} />
                     ))}
+                    </div>
                 </div>
                 <div className="md:col-start-3 mt-6 col-span-12 md:col-span-8 grid md:grid-cols-6 h-min gap-4">
                     {blok.event_card && blok.event_card.map(blok => (

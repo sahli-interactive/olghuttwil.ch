@@ -37,7 +37,7 @@ function Product({ blok }) {
                     type="button"
                     onClick={() => setIsOpen(blok.headline)}
                     className="btn btn-secondary mt-4 w-full">
-                    Karte Bestellen
+                    Karte bestellen
                 </button>
             </div>
             {isOpen !== null && <MapFormOverlay isOpen={isOpen} setIsOpen={setIsOpen} blok={blok} />}
