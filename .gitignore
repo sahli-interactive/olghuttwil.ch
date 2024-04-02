@@ -46,3 +46,6 @@ test-timings.json
 
 # Secrets
 .env.local
+/public/robots.txt
+/public/sitemap.xml
+/public/sitemap-0.xml
