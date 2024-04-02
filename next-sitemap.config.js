@@ -2,5 +2,5 @@
 module.exports = {
     siteUrl: "https://www.olghuttwil.ch",
     generateRobotsTxt: true,
-    exclude: ['']
+    exclude: ['/global']
 }
